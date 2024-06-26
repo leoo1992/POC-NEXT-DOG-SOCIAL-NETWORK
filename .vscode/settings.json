@@ -1,0 +1,18 @@
+{
+    "git.enabled": true,
+    "files.exclude": {
+      "node_modules": true,
+      ".gitignore": true,
+      ".gitattributes": true,
+      ".next": true,
+      "package-lock.json": true,
+      "package.json": true,
+      ".eslintrc*": true,
+      "tsconfig.*": true,
+      "next-env.d.ts": true,
+      "next.config.mjs": true,
+      "README.md": true,
+      "public": true,
+    }
+}
+  
