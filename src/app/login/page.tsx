@@ -1,8 +1,15 @@
+import { Metadata } from 'next';
 
-export default async function LoginPage() {
+export const metadata: Metadata = {
+  title: 'Login | Dogs',
+  description: 'Logue na sua conta no site Dogs.',
+};
+
+export default async function LoginPage()
+{
   return (
-    <main>
+    <section>
       <h1 className="title">Login</h1>
-    </main>
+    </section>
   );
 }

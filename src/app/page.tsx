@@ -1,4 +1,4 @@
-import photosGet from "@/actions/photos-get";
+import photosGet, { Photo } from "@/actions/photos-get";
 import Feed from "@/components/UX/Feed";
 
 export default async function Home() {
@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <section className="container mainContainer">
-      <Feed photos={data} />
+      {data && <Feed photos={data} />}
     </section>
   );
 }

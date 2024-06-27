@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from './feed.module.css';
 
-export default function FeedPhotos({ photos }: { photos: Photo[] }) {
+export default function FeedPhotos({ photos }: { photos: Photo[] | undefined }) {
   return (
       <ul className={`${styles.feed} animeLeft`}>
-      {photos.map((photo: Photo, i) => {
+      {photos?.map((photo: Photo, i) => {
           return (
             <li className={styles.photo} key={photo?.id + i}>
                   <Link href={`/foto/${photo.id}`} scroll={false}>
