@@ -1,30 +1,34 @@
 "use client";
 
 import login from "@/actions/login";
-import { useFormStatus } from "react-dom";
+import { useFormStatus, useFormState } from "react-dom";
 import Button from "@/components/UX/Button";
 import Input from "@/components/UX/Input";
+import ErrorMessage from "../Helper/error-message";
 
 function FormButton() {
   const { pending } = useFormStatus();
+  
   return (
     <>
       {pending ? (
-        <Button disabled>
-          Entrando...
-        </Button>
+        <Button disabled>Entrando...</Button>
       ) : (
-        <Button>
-          Entrar
-        </Button>
+        <Button>Entrar</Button>
       )}
     </>
   );
 }
 
 export default function LoginForm() {
+  const [state, action] = useFormState(login, {
+    ok: false,
+    error: "",
+    data: null,
+  });
+
   return (
-    <form action={login}>
+    <form action={action}>
       <Input
         type="text"
         label="Usuário"
@@ -37,6 +41,7 @@ export default function LoginForm() {
         name="password"
         placeholder="Senha"
       />
+      <ErrorMessage error={state.error} />
       <FormButton />
     </form>
   );
