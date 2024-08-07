@@ -6,6 +6,7 @@ import Input from "@/components/UX/Input";
 import ErrorMessage from "../Helper/error-message";
 import { useEffect } from "react";
 import FormButton from "@/components/Login/form-button";
+import styles from "./login-form.module.css";
 
 export default function LoginFormCriar() {
   const [state, action] = useFormState(userPost, {
@@ -21,7 +22,7 @@ export default function LoginFormCriar() {
   }, [state.ok]);
 
   return (
-    <form action={action}>
+    <form action={action} className={styles.form}>
       <Input
         type="email"
         label="E-mail"
