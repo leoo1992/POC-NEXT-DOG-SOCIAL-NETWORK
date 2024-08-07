@@ -12,15 +12,16 @@ export default async function login(state: {}, formData: FormData) {
 
   try {
     if (!username || !password) throw new Error("Preencha todos os campos");
-    const {url} = TOKEN_POST(),
+    const { url } = TOKEN_POST(),
       response = await fetch(url, {
         method: "POST",
         body: formData,
-      }),
-      data = await response.json();
+      });
 
     if (!response.ok) throw new Error("Senha ou usuário inválidos");
 
+    const data = await response.json();
+    
     cookies().set("Authtoken", data.token, {
       httpOnly: true,
       secure: true,
