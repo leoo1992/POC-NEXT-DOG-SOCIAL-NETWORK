@@ -7,7 +7,7 @@ import ErrorMessage from "../Helper/error-message";
 import { useEffect } from "react";
 import FormButton from "@/components/Login/form-button";
 
-export default function LoginCriarForm() {
+export default function LoginFormCriar() {
   const [state, action] = useFormState(userPost, {
     ok: false,
     error: "",
@@ -26,22 +26,22 @@ export default function LoginCriarForm() {
         type="email"
         label="E-mail"
         name="email"
-        placeholder="E-mail"
+        placeholder="Seu melhor e-mail "
       />
       <Input
         type="text"
         label="Usuário"
         name="username"
-        placeholder="Usuário"
+        placeholder="Seu nome de usuário"
       />
       <Input
         type="password"
         label="Senha"
         name="password"
-        placeholder="Senha"
+        placeholder="Crie sua senha"
       />
       <ErrorMessage error={state.error} />
-      <FormButton text="Cadastrar" loading="Cadastrando..."/>
+      <FormButton text="Cadastrar" loading="Cadastrando..." />
     </form>
   );
 }

@@ -1,4 +1,4 @@
-import LoginCriarForm from "@/components/Login/login-criar-form";
+import LoginCriarForm from "@/components/Login/login-form-criar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
