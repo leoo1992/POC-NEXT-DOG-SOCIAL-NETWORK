@@ -1,5 +1,12 @@
+import { Metadata } from "next";
 
-export default async function EsqueceuPage() {
+export const metadata: Metadata = {
+  title: "Recuperar conta",
+  description: "Recupere sua senha",
+}
+
+export default async function EsqueceuPage()
+{
   return (
     <main>
       <h1 className="title">Esqueceu</h1>
