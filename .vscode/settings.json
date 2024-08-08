@@ -24,12 +24,12 @@
       "src/app/favicon.ico": true,
       "src/app/foto": true,
       "src/app/perfil": true,
-      "src/app/conta": true,
       "src/app/layout.tsx": true,
       "src/app/page.tsx": true,
       "src/app/globals.css": true,
-      // "src/app/login": true,
-      
+      "src/middleware.ts": true,
+      "src/app/login": true,
+      // "src/app/conta": true,
     }
 }
   

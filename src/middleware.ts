@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const token = request.cookies.get("token")?.value;
+  const token = request.cookies.get("Authtoken")?.value;
   const autenticated = token ? true : false;
 
   if (!autenticated && request.nextUrl.pathname.startsWith("/conta")) {

@@ -20,7 +20,7 @@ export default function LoginForm() {
     if (state.ok) {
       window.location.href = "/conta";
     }
-  }, [state.ok]);
+  }, [state?.ok]);
 
   return (
     <>
