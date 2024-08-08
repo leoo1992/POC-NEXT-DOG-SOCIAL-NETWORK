@@ -1,19 +1,34 @@
 {
     "git.enabled": true,
     "files.exclude": {
+      //NODE
       "node_modules": true,
-      ".gitignore": true,
-      ".gitattributes": true,
       "package-lock.json": true,
       "package.json": true,
+      //GIT
+      ".gitignore": true,
+      ".gitattributes": true,
       ".eslintrc*": true,
       "README.md": true,
+      //PUBLIC
       "public": true,
+      //TS
+      "tsconfig.json": true,
+      //NEXT
       ".next": true,
       "next.config.mjs": true,
       "next-env.d.ts": true,
-      "tsconfig.json": true,
+      //VSCODE
       ".vscode/tasks.json": true,
+      //SRC
+      "src/app/favicon.ico": true,
+      "src/app/foto": true,
+      "src/app/perfil": true,
+      "src/app/conta": true,
+      "src/app/layout.tsx": true,
+      "src/app/page.tsx": true,
+      "src/app/globals.css": true,
+      // "src/app/login": true,
       
     }
 }
