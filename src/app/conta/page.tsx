@@ -1,6 +1,7 @@
+"use client";
 import { useUser } from "@/context/user-context";
 
-export default async function ContaPage()
+export default function ContaPage()
 {
   const {user} = useUser();
 
