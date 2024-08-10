@@ -21,13 +21,19 @@
       //VSCODE
       ".vscode/tasks.json": true,
       //SRC
+      "src/middleware.ts": true,
+      "src/icons": true,
+      "src/context": true,
+      // "src/functions": true,
+      "src/actions": true,
+      "src/hooks": true,
+      //SRC/APP
       "src/app/favicon.ico": true,
       "src/app/foto": true,
       "src/app/perfil": true,
       "src/app/layout.tsx": true,
       "src/app/page.tsx": true,
       "src/app/globals.css": true,
-      "src/middleware.ts": true,
       "src/app/login": true,
       // "src/app/conta": true,
     }

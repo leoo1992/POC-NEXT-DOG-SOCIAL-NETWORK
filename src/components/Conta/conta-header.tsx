@@ -9,17 +9,7 @@ import FeedIcon from '@/icons/feed-icon';
 import EstatisticasIcon from '@/icons/estatisticas-icon';
 import AdicionarIcon from '@/icons/adicionar-icon';
 import SairIcon from '@/icons/sair-icon';
-
-function getTitle(pathname: string) {
-  switch (pathname) {
-    case '/conta/postar':
-      return 'Poste Sua Foto';
-    case '/conta/estatisticas':
-      return 'Estatísticas';
-    default:
-      return 'Minha Conta';
-  }
-}
+import getTitle from '@/functions/get-page-title';
 
 export default function ContaHeader() {
   const mobile = useMedia('(max-width: 40rem)');
