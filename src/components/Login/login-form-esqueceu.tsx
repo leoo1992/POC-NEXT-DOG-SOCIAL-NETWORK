@@ -4,7 +4,7 @@ import passLost from "@/actions/pass-lost";
 import { useFormState } from "react-dom";
 import Input from "@/components/UX/Input";
 import ErrorMessage from "../Helper/error-message";
-import FormButton from "@/components/Login/form-button";
+import FormButton from "../UX/Button/form-button";
 import styles from "./login-form.module.css";
 import { useEffect, useState } from "react";
 
