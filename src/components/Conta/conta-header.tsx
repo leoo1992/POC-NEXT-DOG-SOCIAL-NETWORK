@@ -1,27 +1,32 @@
-'use client';
+"use client";
 
-import styles from './conta-header.module.css';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import useMedia from '@/hooks/use-media';
-import FeedIcon from '@/icons/feed-icon';
-import EstatisticasIcon from '@/icons/estatisticas-icon';
-import AdicionarIcon from '@/icons/adicionar-icon';
-import SairIcon from '@/icons/sair-icon';
-import getTitle from '@/functions/get-page-title';
+import styles from "./conta-header.module.css";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import useMedia from "@/hooks/use-media";
+import FeedIcon from "@/icons/feed-icon";
+import EstatisticasIcon from "@/icons/estatisticas-icon";
+import AdicionarIcon from "@/icons/adicionar-icon";
+import SairIcon from "@/icons/sair-icon";
+import getTitle from "@/functions/get-page-title";
+import logout from "@/actions/logout";
+import { useUser } from "@/context/user-context";
 
 export default function ContaHeader() {
-  const mobile = useMedia('(max-width: 40rem)');
+  const mobile = useMedia("(max-width: 40rem)");
   const [mobileMenu, setMobileMenu] = useState(false);
+  const { setUserState } = useUser();
 
   const pathname = usePathname();
   useEffect(() => {
     setMobileMenu(false);
   }, [pathname]);
 
-  function handleLogout() {
-    // userLogout();
+  async function handleLogout() {
+    await logout();
+    setUserState(null);
+    // window.location.href = "/login";
   }
 
   return (
@@ -42,27 +47,27 @@ export default function ContaHeader() {
           mobileMenu && styles.navMobileActive
         }`}
       >
-        <Link href="/conta" className={pathname === '/conta' ? 'active' : ''}>
+        <Link href="/conta" className={pathname === "/conta" ? "active" : ""}>
           <FeedIcon />
-          {mobile && 'Minhas Fotos'}
+          {mobile && "Minhas Fotos"}
         </Link>
         <Link
           href="/conta/estatisticas"
-          className={pathname === '/conta/estatisticas' ? 'active' : ''}
+          className={pathname === "/conta/estatisticas" ? "active" : ""}
         >
           <EstatisticasIcon />
-          {mobile && 'Estatísticas'}
+          {mobile && "Estatísticas"}
         </Link>
         <Link
           href="/conta/postar"
-          className={pathname === '/conta/postar' ? 'active' : ''}
+          className={pathname === "/conta/postar" ? "active" : ""}
         >
           <AdicionarIcon />
-          {mobile && 'Adicionar Foto'}
+          {mobile && "Adicionar Foto"}
         </Link>
         <button onClick={handleLogout}>
           <SairIcon />
-          {mobile && 'Sair'}
+          {mobile && "Sair"}
         </button>
       </nav>
     </header>

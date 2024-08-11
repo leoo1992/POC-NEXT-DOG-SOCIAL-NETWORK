@@ -24,9 +24,9 @@
       "src/middleware.ts": true,
       "src/icons": true,
       "src/context": true,
-      // "src/functions": true,
-      "src/actions": true,
       "src/hooks": true,
+      // "src/functions": true,
+      // "src/actions": true,
       //SRC/APP
       "src/app/favicon.ico": true,
       "src/app/foto": true,
