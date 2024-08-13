@@ -1,5 +1,5 @@
 import photosGet, { Photo } from "@/actions/photos-get";
-import Feed from "@/components/UX/Feed";
+import Feed from "@/components/Feed";
 
 export default async function Home() {
 

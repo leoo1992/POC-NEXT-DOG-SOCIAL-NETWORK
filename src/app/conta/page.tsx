@@ -1,6 +1,6 @@
 import photosGet from "@/actions/photos-get";
 import userGet from "@/actions/user-get";
-import Feed from "@/components/UX/Feed";
+import Feed from "@/components/Feed";
 import { Metadata } from "next";
 import Link from "next/link";
 

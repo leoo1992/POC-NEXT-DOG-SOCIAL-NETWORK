@@ -36,7 +36,7 @@
       "src/app/globals.css": true,
       "src/app/login": true,
       // "src/app/conta": true,
-      "src/components/Helper": true,
+      // "src/components/Helper": true,
       // "src/components/Login": true,
     }
 }
