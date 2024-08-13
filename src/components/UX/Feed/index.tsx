@@ -4,7 +4,7 @@ import FeedPhotos from "./feed-photos";
 export default function Feed({
   photos,
 }: {
-  photos: { data: Photo[] } | undefined;
+  photos: { data: Photo[] | null } | undefined;
 }) {
   const photoArray = photos?.data || [];
 

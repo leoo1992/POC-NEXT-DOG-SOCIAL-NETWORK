@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 export default async function EstatisticasPage()
 {
   return (
-    <main>
+    <section>
       <h1 className="title">Estatisticas</h1>
-    </main>
+    </section>
   );
 }

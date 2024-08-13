@@ -1,7 +1,7 @@
 export default async function FotoPage() {
   return (
-    <main>
+    <section>
       <h1 className="title">Foto</h1>
-    </main>
+    </section>
   );
 }
