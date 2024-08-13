@@ -17,7 +17,7 @@ export default async function ContaPage() {
   return (
     <section>
       {photos.data?.length ? (
-        <Feed photos={photos} />
+        <Feed photos={photos} user={user?.username} />
       ) : (
         <div>
           <p

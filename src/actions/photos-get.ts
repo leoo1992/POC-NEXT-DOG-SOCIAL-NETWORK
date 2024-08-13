@@ -21,18 +21,19 @@ type PhotosGetParams = {
   user?: 0 | string;
 };
 
-export default async function photosGet({
-  page = 1,
-  total = 6,
-  user = 0,
-}: PhotosGetParams = {}) {
+export default async function photosGet(
+  { page = 1, total = 6, user = 0 }: PhotosGetParams = {},
+  optionsFront?: RequestInit
+) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   try {
+    const options = optionsFront || {
+      next: { revalidate: 10, tags: ["photos"] },
+    };
+
     const { url } = await PHOTOS_GET({ page, total, user }),
-      response = await fetch(url, {
-        next: { revalidate: 10, tags: ["photos"] },
-      });
+      response = await fetch(url, options);
 
     if (!response.ok) {
       throw new Error("Erro ao pegar as fotos");

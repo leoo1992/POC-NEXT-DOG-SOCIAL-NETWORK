@@ -6,7 +6,7 @@ import styles from "./feed.module.css";
 export default function FeedPhotos({
   photos,
 }: {
-  photos: Photo[] | undefined;
+  photos: Photo[] | undefined | null;
 }) {
   const photoArray = Array.isArray(photos) ? photos : [];
 
