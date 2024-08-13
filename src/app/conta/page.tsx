@@ -12,11 +12,12 @@ export const metadata: Metadata = {
 
 export default async function ContaPage() {
   const { data: user } = await userGet();
-  const { data } = await photosGet({ user: user?.username });
+  const photos = await photosGet({ user: user?.username });
+
   return (
     <main>
-      {data?.length ? (
-        <Feed photos={data} />
+      {photos.data?.length ? (
+        <Feed photos={photos} />
       ) : (
         <div>
           <p
@@ -24,7 +25,11 @@ export default async function ContaPage() {
           >
             Sem fotos para mostrar, adicione uma foto.
           </p>
-          <Link href={"/conta/postar"} className="button" style={{display: "inline-block"}}>
+          <Link
+            href={"/conta/postar"}
+            className="button"
+            style={{ display: "inline-block" }}
+          >
             Postar Foto
           </Link>
         </div>
