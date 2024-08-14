@@ -29,15 +29,15 @@
       // "src/actions": true,
       //SRC/APP
       "src/app/favicon.ico": true,
-      "src/app/foto": true,
+      // "src/app/foto": true,
       "src/app/perfil": true,
       "src/app/layout.tsx": true,
       "src/app/page.tsx": true,
       "src/app/globals.css": true,
       "src/app/login": true,
-      // "src/app/conta": true,
-      // "src/components/Helper": true,
-      // "src/components/Login": true,
+      "src/app/conta": true,
+      "src/components/Helper": true,
+      "src/components/Login": true,
     }
 }
   
