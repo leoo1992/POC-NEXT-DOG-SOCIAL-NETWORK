@@ -5,6 +5,7 @@ import Header from "@/components/UX/Header/";
 import Footer from "@/components/UX/Footer";
 import { UserContextProvider } from "@/context/user-context";
 import userGet from "@/actions/user-get";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Dogs Next",
@@ -20,6 +21,7 @@ export default async function RootLayout({
 
   return (
     <html lang="pt-BR">
+      <Analytics/>
       <body className={type_second.variable}>
         <UserContextProvider user={user}>
           <div className="App">
