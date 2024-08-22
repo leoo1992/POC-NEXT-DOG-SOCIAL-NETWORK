@@ -32,7 +32,7 @@ export default async function photosGet(
       next: { revalidate: 10, tags: ["photos"] },
     };
 
-    const { url } = await PHOTOS_GET({ page, total, user }),
+    const { url } = PHOTOS_GET({ page, total, user }),
       response = await fetch(url, options);
 
     if (!response.ok) {

@@ -4,7 +4,7 @@
       //NODE
       "node_modules": true,
       "package-lock.json": true,
-      "package.json": true,
+      // "package.json": true,
       //GIT
       ".gitignore": true,
       ".gitattributes": true,
@@ -21,7 +21,7 @@
       //VSCODE
       ".vscode/tasks.json": true,
       //SRC
-      "src/middleware.ts": true,
+      // "src/middleware.ts": true,
       "src/icons": true,
       // "src/context": true,
       "src/hooks": true,
