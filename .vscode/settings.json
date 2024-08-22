@@ -1,43 +1,43 @@
-{
-    "git.enabled": true,
-    "files.exclude": {
-      //NODE
-      "node_modules": true,
-      "package-lock.json": true,
-      // "package.json": true,
-      //GIT
-      ".gitignore": true,
-      ".gitattributes": true,
-      ".eslintrc*": true,
-      "README.md": true,
-      //PUBLIC
-      "public": true,
-      //TS
-      "tsconfig.json": true,
-      //NEXT
-      ".next": true,
-      "next.config.mjs": true,
-      "next-env.d.ts": true,
-      //VSCODE
-      ".vscode/tasks.json": true,
-      //SRC
-      // "src/middleware.ts": true,
-      "src/icons": true,
-      // "src/context": true,
-      "src/hooks": true,
-      // "src/functions": true,
-      // "src/actions": true,
-      //SRC/APP
-      "src/app/favicon.ico": true,
-      "src/app/foto": true,
-      // "src/app/perfil": true,
-      "src/app/layout.tsx": true,
-      "src/app/page.tsx": true,
-      "src/app/globals.css": true,
-      "src/app/login": true,
-      // "src/app/conta": true,
-      "src/components/Helper": true,
-      "src/components/Login": true,
-    }
-}
+// {
+//     "git.enabled": true,
+//     "files.exclude": {
+//       //NODE
+//       "node_modules": true,
+//       "package-lock.json": true,
+//       // "package.json": true,
+//       //GIT
+//       ".gitignore": true,
+//       ".gitattributes": true,
+//       ".eslintrc*": true,
+//       "README.md": true,
+//       //PUBLIC
+//       "public": true,
+//       //TS
+//       "tsconfig.json": true,
+//       //NEXT
+//       ".next": true,
+//       "next.config.mjs": true,
+//       "next-env.d.ts": true,
+//       //VSCODE
+//       ".vscode/tasks.json": true,
+//       //SRC
+//       // "src/middleware.ts": true,
+//       "src/icons": true,
+//       // "src/context": true,
+//       "src/hooks": true,
+//       // "src/functions": true,
+//       // "src/actions": true,
+//       //SRC/APP
+//       "src/app/favicon.ico": true,
+//       "src/app/foto": true,
+//       // "src/app/perfil": true,
+//       "src/app/layout.tsx": true,
+//       "src/app/page.tsx": true,
+//       "src/app/globals.css": true,
+//       "src/app/login": true,
+//       // "src/app/conta": true,
+//       "src/components/Helper": true,
+//       "src/components/Login": true,
+//     }
+// }
   
