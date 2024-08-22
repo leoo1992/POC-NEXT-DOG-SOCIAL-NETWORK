@@ -23,7 +23,7 @@
       //SRC
       "src/middleware.ts": true,
       "src/icons": true,
-      "src/context": true,
+      // "src/context": true,
       "src/hooks": true,
       // "src/functions": true,
       // "src/actions": true,
