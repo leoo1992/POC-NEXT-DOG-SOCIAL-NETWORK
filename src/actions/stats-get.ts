@@ -14,7 +14,7 @@ export default async function statsGet() {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   try {
-    const token = cookies().get("token")?.value;
+    const token = cookies().get("Authtoken")?.value;
     if (!token) throw new Error("Token inválido");
     const { url } = STATS_GET();
     const response = await fetch(url, {

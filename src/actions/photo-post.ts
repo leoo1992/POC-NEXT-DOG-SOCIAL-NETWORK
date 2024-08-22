@@ -7,14 +7,18 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export default async function photoPost(state: {}, formData: FormData) {
-  const token = cookies().get('token')?.value;
+  const token = cookies().get('Authtoken')?.value;
   const nome = formData.get('nome') as string | null;
   const idade = formData.get('idade') as string | null;
   const peso = formData.get('peso') as string | null;
   const img = formData.get('img') as File;
 
-  try {
-    if (!token || !nome || !idade || !peso || img.size === 0)
+  try
+  {
+    if (!token) {
+      throw new Error('Efetue o login primeiro.');
+    }
+    if ( !nome || !idade || !peso || img.size === 0)
       throw new Error('Preencha os dados.');
     const { url } = PHOTO_POST();
     const response = await fetch(url, {

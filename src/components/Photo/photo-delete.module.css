@@ -1,5 +1,5 @@
 .delete {
-    background: #ddd;
+    background: #fa0000;
     padding: 0.3rem 0.6rem;
     line-height: 1;
     border: 1px solid transparent;
@@ -8,6 +8,7 @@
     cursor: pointer;
     border-radius: 0.4rem;
     transition: 0.1s;
+    color: #fff;
   }
   
   .delete:focus,
@@ -16,5 +17,6 @@
     background: white;
     box-shadow: 0 0 0 3px #eee;
     border-color: #333;
+    color: #fa0000;
   }
   

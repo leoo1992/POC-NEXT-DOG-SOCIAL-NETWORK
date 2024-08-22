@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function photoDelete(id: string) {
-  const token = cookies().get("token")?.value;
+  const token = cookies().get("Authtoken")?.value;
   try {
     if (!token )
       throw new Error("Token inválido");

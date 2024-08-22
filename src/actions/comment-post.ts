@@ -7,7 +7,7 @@ import { cookies } from 'next/headers';
 import { Comment } from './photo-get';
 
 export default async function commentPost(state: {}, formData: FormData) {
-  const token = cookies().get('token')?.value;
+  const token = cookies().get('Authtoken')?.value;
   const comment = formData.get('comment') as string | null;
   const id = formData.get('id') as string | null;
   try {

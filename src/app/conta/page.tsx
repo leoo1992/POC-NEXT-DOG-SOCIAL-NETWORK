@@ -1,34 +1,32 @@
-import photosGet from "@/actions/photos-get";
-import userGet from "@/actions/user-get";
-import Feed from "@/components/Feed";
-import { Metadata } from "next";
-import Link from "next/link";
+import photosGet from '@/actions/photos-get';
+import userGet from '@/actions/user-get';
+import Feed from '@/components/Feed';
 
-export const runtime = "edge";
+import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Minha conta",
+  title: 'Minha Conta',
 };
 
 export default async function ContaPage() {
   const { data: user } = await userGet();
-  const photos = await photosGet({ user: user?.username });
-
+  const { data } = await photosGet({ user: user?.username });
   return (
     <section>
-      {photos.data?.length ? (
-        <Feed photos={photos} user={user?.username} />
+      {data?.length ? (
+        <Feed photos={{data}} user={user?.username} />
       ) : (
         <div>
           <p
-            style={{ color: "#444", fontSize: "1.25rem", marginBottom: "1rem" }}
+            style={{ color: '#444', fontSize: '1.25rem', marginBottom: '1rem' }}
           >
-            Sem fotos para mostrar, adicione uma foto.
+            Nenhuma foto encontrada.
           </p>
           <Link
-            href={"/conta/postar"}
+            href={'/conta/postar'}
             className="button"
-            style={{ display: "inline-block" }}
+            style={{ display: 'inline-block' }}
           >
             Postar Foto
           </Link>
