@@ -4,6 +4,6 @@
 import { cookies } from "next/headers";
 
 export default async function logout() {
-    cookies().delete("Authtoken");
+    (await cookies()).delete("Authtoken");
     // redirect("/login");
 }

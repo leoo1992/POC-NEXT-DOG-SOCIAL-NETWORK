@@ -2,12 +2,12 @@
 
 import { COMMENT_POST } from '@/functions/api';
 import apiError from '@/functions/api-error';
-import { revalidateTag } from 'next/cache';
+import { updateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 import { Comment } from './photo-get';
 
 export default async function commentPost(state: {}, formData: FormData) {
-  const token = cookies().get('Authtoken')?.value;
+  const token = (await cookies()).get('Authtoken')?.value;
   const comment = formData.get('comment') as string | null;
   const id = formData.get('id') as string | null;
   try {
@@ -22,7 +22,7 @@ export default async function commentPost(state: {}, formData: FormData) {
     });
     if (!response.ok) throw new Error('Email ou usuário já cadastrado.');
     const data = (await response.json()) as Comment;
-    revalidateTag('comment');
+    updateTag('comment');
     return { data, ok: true, error: '' };
   } catch (error: unknown) {
     return apiError(error);
