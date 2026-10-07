@@ -16,7 +16,7 @@ export default async function userGet() {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   try {
-    const token = cookies().get("Authtoken")?.value;
+    const token = (await cookies()).get("Authtoken")?.value;
 
     if (!token) throw new Error("Token não encontardo");
     const { url } = USER_GET(),
