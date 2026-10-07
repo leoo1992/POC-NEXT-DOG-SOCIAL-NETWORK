@@ -1,12 +1,12 @@
 "use server";
 import { PHOTO_DELETE } from "@/functions/api";
 import apiError from "@/functions/api-error";
-import { revalidateTag } from "next/cache";
+import { updateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function photoDelete(id: string) {
-  const token = cookies().get("Authtoken")?.value;
+  const token = (await cookies()).get("Authtoken")?.value;
   try {
     if (!token )
       throw new Error("Token inválido");
@@ -21,6 +21,6 @@ export default async function photoDelete(id: string) {
   } catch (error: unknown) {
     return apiError(error);
   }
-  revalidateTag("photos");
+  updateTag("photos");
   redirect("/conta");
 }
