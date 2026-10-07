@@ -22,7 +22,7 @@ export default async function login(state: {}, formData: FormData) {
 
     const data = await response.json();
     
-    cookies().set("Authtoken", data.token, {
+    (await cookies()).set("Authtoken", data.token, {
       httpOnly: true,
       secure: true,
       sameSite: "lax",
