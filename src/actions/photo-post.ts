@@ -2,12 +2,12 @@
 
 import { PHOTO_POST } from '@/functions/api';
 import apiError from '@/functions/api-error';
-import { revalidateTag } from 'next/cache';
+import { updateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export default async function photoPost(state: {}, formData: FormData) {
-  const token = cookies().get('Authtoken')?.value;
+  const token = (await cookies()).get('Authtoken')?.value;
   const nome = formData.get('nome') as string | null;
   const idade = formData.get('idade') as string | null;
   const peso = formData.get('peso') as string | null;
@@ -32,6 +32,6 @@ export default async function photoPost(state: {}, formData: FormData) {
   } catch (error: unknown) {
     return apiError(error);
   }
-  revalidateTag('photos');
+  updateTag('photos');
   redirect('/conta');
 }
